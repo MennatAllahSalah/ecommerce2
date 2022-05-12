@@ -1,0 +1,35 @@
+<!-- <h2>Make an order</h2>
+<div class="mb-3">
+    <label for="" class="form-label">Select Category</label>
+    <select class="btn btn-secondary m-3" name="cat" id="CatSel" title="catgory"
+        [(ngModel)]="SelectedCatID">
+      <option value="0">Select All</option>
+      <option *ngFor="let cat of CategoryList" [value]="cat.id">{{cat.name}}</option>
+    </select>
+  </div> -->
+ 
+
+  
+  
+  <br>
+  <div class="card" style="width: 18rem;" *ngFor="let item of ProductList" >
+      <ng-container *ngIf="item.quantity!=0">
+
+          
+              <img class="card-img-top" [src]="item.image" alt="product image">
+              <div class="card-body">
+                <h5 class="card-title">Name:{{item.name}}</h5>
+                <div class="card-text">
+          
+                  <h6 >Price: {{item.price}}</h6>
+                <h6 class="card-text">Quantity {{item.quantity}}</h6>
+                <input #itemsCount type="number" class="form-control " >
+                <button type="button" class="btn btn-secondary " (click)="addProductToCard(item.id,+itemsCount.value)">Add to Card </button>
+                <button type="button" class="btn btn-secondary " role="button" (click)="prodectDetails(item.id)">Details</button>
+                </div>
+              </div>
+                
+          
+  </ng-container>
+  </div>
+

@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="product?.image" alt="product image">
+    <div class="card-body">
+      <h5 class="card-title">Name:{{product?.name}}</h5>
+      <div class="card-text">
+
+        <h6 >Price: {{product?.price}}</h6>
+      <h6 class="card-text">Quantity {{product?.quantity}}</h6>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary m-1" [disabled]="IsFirstProduct()" (click)="PreviousProduct()">Previous</button>
+        <button  class="btn btn-secondary m-1" (click)="Back()">Back</button>
+        <button type="button" class="btn btn-secondary m-1" [disabled]="IsLastProduct()"  (click)="nextProduct()">Next</button>
+      </div>
+    </div>
+  </div>
+  
